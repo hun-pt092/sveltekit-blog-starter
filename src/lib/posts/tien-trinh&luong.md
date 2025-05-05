@@ -49,7 +49,8 @@ categories: ["công nghệ", "hệ thống phân tán"]
 
 ## 3. Khi nào dùng Thread, khi nào dùng Process?
 
-![Ảnh phân tán](/static/images/distribu-system.png)
+![Ảnh phân tán](/images/distribu-system.png)
+
 
 
 | Trường hợp                 | Thread                        | Process                         | Cả hai                                      |

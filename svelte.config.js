@@ -10,6 +10,9 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		files: {
+			assets: 'static'
+		},
 		prerender: {
 			entries: [
 				"*",
