@@ -1,21 +1,23 @@
 <svelte:head>
-	<title>About</title>
+    <title>Học tập về Ứng dụng Phân tán</title>
 </svelte:head>
 
-# About
+# Học tập về Ứng dụng Phân tán
 
-This is an example of how you can have _markdown_ in page content!
+Chào mừng bạn đến với trang học tập về _ứng dụng phân tán_!
 
-- How
-- **Cool**
-- Is _that_!?
+Các chủ đề chính:
+- Kiến trúc phân tán
+- **Giao thức truyền thông**
+- _Đồng bộ hóa_ và nhất quán
+- Khả năng chịu lỗi
 
-If you like, you can also import markdown into any Svelte page.
+Tài liệu này sẽ giúp bạn hiểu về các khái niệm cơ bản của hệ thống phân tán.
 
-Anyway, you can find this file here:
+Bạn có thể tìm thấy file này tại:
 
 ```
 src/routes/about/+page.md
 ```
 
-Here's the [home link](/) if you wanna go back.
+[Quay lại trang chủ](/) để xem thêm nội dung khác.

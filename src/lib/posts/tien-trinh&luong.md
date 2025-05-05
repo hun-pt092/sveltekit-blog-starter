@@ -1,3 +1,13 @@
+---
+title: "Tiến trình & Luồng"
+slug: "he-thong-phan-tan"
+date: "2025-04-28"
+excerpt: "Nói về hiệu năng máy tính của tôi, các bài toán sử dụng đa luồng đa tiến trình."
+coverImage: "/images/distribu-system.png"
+coverWidth: 1200
+coverHeight: 630
+categories: ["công nghệ", "hệ thống phân tán"]
+---
 # Tiến Trình & Luồng
 
 ## 1. Hiệu năng máy tính hiện tại
@@ -38,8 +48,9 @@
 ---
 
 ## 3. Khi nào dùng Thread, khi nào dùng Process?
+![Ảnh phân tán](../../../static/images/distribu-system.png)
 
-*(Phần này bạn có thể chèn hình ảnh bảng viết tay nếu đã chụp)*
+
 
 | Trường hợp                 | Thread                        | Process                         | Cả hai                                      |
 |---------------------------|-------------------------------|----------------------------------|----------------------------------------------|
@@ -68,9 +79,3 @@
 - [Megatron-LM Paper (PDF)](https://arxiv.org/pdf/2104.04473.pdf)
 
 ---
-
-> Viết bài blog dễ hiểu, có minh hoạ hình ảnh Task Manager, bảng thống tin và tài liệu tham khảo sẽ giúp bạn "chạm đỉnh chóp" trong môn Hệ Điều Hành và Hệ Phân Tán.
-
----
-
-Bạn muốn mình xuất toàn bộ này thành `.md` file để bạn tải về không?

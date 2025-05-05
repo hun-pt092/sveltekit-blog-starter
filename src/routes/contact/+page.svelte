@@ -13,9 +13,9 @@
 
 <h1>Contact</h1>
 
-This starter was made by Josh Collinsworth. You can <a rel="external" href="https://joshcollinsworth.com/contact">get in touch with Josh here</a>.
+This starter was made by Duy Hưng. You can <a rel="external" href="https://www.facebook.com/nguyen.hung.277414">get in touch with Hưng here</a>.
 
-If you're using this starter for your own site, feel free to delete this page, or replace it with a contact page of your own. (I'm a big fan of <a href="https://docs.netlify.com/forms/setup/">Netlify forms</a>, personally.)
+If you're using this starter for your own site, feel free to delete this page, or replace it with a contact page of your own. ( Josh have big fan of <a href="https://docs.netlify.com/forms/setup/">Netlify forms</a>, personally.)
 
 <Callout>This form does nothing! It's just here to show default styling.</Callout>
 
