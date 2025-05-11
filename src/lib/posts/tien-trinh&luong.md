@@ -1,16 +1,18 @@
 ---
 title: "Tiến trình & Luồng"
 slug: "he-thong-phan-tan"
-date: "2025-04-28"
+date: "2025-05-04"
 excerpt: "Nói về hiệu năng máy tính của tôi, các bài toán sử dụng đa luồng đa tiến trình."
-coverImage: "/images/distribu-system.png"
+coverImage: "/images/tien_trinh.png"
 coverWidth: 1200
-coverHeight: 630
+coverHeight: 1300
 categories: ["công nghệ", "hệ thống phân tán"]
 ---
 # Tiến Trình & Luồng
 
 ## 1. Hiệu năng máy tính hiện tại
+
+![Ảnh phân tán](/images/cpux.png)
 
 **CPU:** Intel Core i3-7020U @ 2.30GHz  
 - **Cores:** 2 | **Logical Processors:** 4 (nhờ Hyper-Threading)  
