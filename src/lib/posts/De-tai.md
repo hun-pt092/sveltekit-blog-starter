@@ -31,9 +31,9 @@ Các hệ thống blog hiện nay thường được xây dựng theo mô hình 
 
 ---
 
-## 🔍 3. Thư viện / Framework được giao: CockroachDB
+##  3. Thư viện / Framework được giao: CockroachDB
 
-### 🎯 Mục đích sử dụng
+###  Mục đích sử dụng
 
 CockroachDB là hệ quản trị cơ sở dữ liệu phân tán mã nguồn mở, hỗ trợ SQL (PostgreSQL-compatible). Nó giúp xây dựng các hệ thống:
 
@@ -41,22 +41,22 @@ CockroachDB là hệ quản trị cơ sở dữ liệu phân tán mã nguồn m�
 - **Tự động phục hồi** khi có lỗi phần cứng.
 - **Đảm bảo nhất quán dữ liệu mạnh** trong môi trường phân tán.
 
-### 🧠 CockroachDB giải quyết được gì?
+###  CockroachDB giải quyết được gì?
 
 - **Nhất quán mạnh**: Đồng bộ dữ liệu giữa các node một cách tự động.
 - **Khả năng phục hồi lỗi cao**: Hệ thống vẫn hoạt động khi một hoặc nhiều node mất kết nối.
 - **Không downtime khi mở rộng**: Có thể thêm node mới dễ dàng trong quá trình hoạt động.
 - **Thích hợp cho ứng dụng quy mô lớn**, phân tán: mạng xã hội, hệ thống tài chính, e-commerce đa vùng.
 
-### ⚖️ So sánh CockroachDB với các CSDL/Framework khác
+###  So sánh CockroachDB với các CSDL/Framework khác
 
 | Tiêu chí              | CockroachDB             | PostgreSQL           | MongoDB              | Redis              |
 |-----------------------|--------------------------|-----------------------|-----------------------|--------------------|
-| Phân tán dữ liệu      | ✅ Có                    | ❌ Không              | ✅ Có                 | ✅ Có              |
-| Hỗ trợ SQL            | ✅ PostgreSQL-compatible | ✅ Chuẩn SQL          | ❌ NoSQL             | ❌ (Key-Value)     |
-| Nhất quán mạnh        | ✅ Có                    | ✅ Có                 | ❌ (eventual)        | ⚠️ Tùy cấu hình    |
-| Khả năng mở rộng      | ✅ Tốt                   | ❌ Hạn chế            | ✅ Tốt                | ✅ Tốt             |
-| Độ thân thiện         | ⚠️ Vừa phải              | ✅ Dễ                 | ✅ Dễ                | ✅ Dễ              |
+| Phân tán dữ liệu      |  Có                    |  Không              |  Có                 |  Có              |
+| Hỗ trợ SQL            |  PostgreSQL-compatible |  Chuẩn SQL          |  NoSQL             |  (Key-Value)     |
+| Nhất quán mạnh        |  Có                    |  Có                 |  (eventual)        |  Tùy cấu hình    |
+| Khả năng mở rộng      |  Tốt                   |  Hạn chế            |  Tốt                |  Tốt             |
+| Độ thân thiện         |  Vừa phải              | Dễ                 |  Dễ                |  Dễ              |
 
 ### ➕ Ưu điểm
 
@@ -71,7 +71,7 @@ CockroachDB là hệ quản trị cơ sở dữ liệu phân tán mã nguồn m�
 - Tốn tài nguyên (RAM, CPU) hơn DB truyền thống.
 - Không phù hợp cho bài toán nhỏ hoặc hệ thống ít người dùng.
 
-### 🚀 Ứng dụng thực tế
+###  Ứng dụng thực tế
 
 - Ngân hàng, tài chính, giao dịch thời gian thực.
 - Mạng xã hội, nền tảng blog đông người dùng.
@@ -79,7 +79,7 @@ CockroachDB là hệ quản trị cơ sở dữ liệu phân tán mã nguồn m�
 
 ---
 
-## 🧩 4. Ứng dụng CockroachDB trong đề tài blog
+##  4. Ứng dụng CockroachDB trong đề tài blog
 
 - **Lưu trữ bài viết và bình luận phân tán** trên nhiều node → đảm bảo không mất dữ liệu nếu có node gặp sự cố.
 - **Tính năng bình luận thời gian thực** qua WebSocket sẽ tương tác với backend để cập nhật bình luận mới lên DB ngay khi người dùng gửi.
@@ -87,7 +87,7 @@ CockroachDB là hệ quản trị cơ sở dữ liệu phân tán mã nguồn m�
 
 ---
 
-## 📆 5. Kế hoạch dự kiến giữa kỳ
+##  5. Kế hoạch dự kiến giữa kỳ
 
 | Tuần | Công việc                                                                 |
 |------|---------------------------------------------------------------------------|
@@ -99,7 +99,7 @@ CockroachDB là hệ quản trị cơ sở dữ liệu phân tán mã nguồn m�
 | 6    | Mô phỏng lỗi node, kiểm thử tính nhất quán và khả năng phục hồi          |
 | 7    | Viết báo cáo giữa kỳ, hoàn thiện phần chức năng cần demo                 |
 
-### 🎯 Chức năng hoàn thành trong giữa kỳ:
+###  Chức năng hoàn thành trong giữa kỳ:
 
 - CRUD bài viết.
 - Giao diện viết và xem bài.

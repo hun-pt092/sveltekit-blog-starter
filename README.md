@@ -1,5 +1,5 @@
-## Họ tên:Nguyễn Duy Hưng
-SV công nghệ thông tin N02
+## Họ tên:Nguyễn Duy Hưng  
+Chào mừng đã đến với blog của tui
 
 
 ## Features
