@@ -14,21 +14,63 @@ categories: ["công nghệ", "hệ thống phân tán"]
 
 ![Ảnh phân tán](/images/cpux.png)
 
-**CPU:** Intel Core i3-7020U @ 2.30GHz  
-- **Cores:** 2 | **Logical Processors:** 4 (nhờ Hyper-Threading)  
-- **Threads hiện tại:** ~2890 | **Processes:** 293  
-- **Utilization:** ~27% | **Speed:** 1.19 GHz
+## 🖥️ 1. CPU – Intel Core i3-7020U @ 2.30GHz
 
-**RAM:** 19.9 GB (Sử dụng 11.0 GB - 55%)  
-**GPU:** Intel HD Graphics 620 (Sử dụng 10%)  
-**Disk:** SSD
+- **Số nhân / luồng**: 2 cores / 4 threads  
+- **Tốc độ thực tế**: ~1.5 GHz  
+- **Ảo hóa**: Enabled  
 
-**Nhận định:**  
-- Hệ thống tốt cho lập trình, học hỏi, đa nhiệm.  
-- Số luồng/tiến trình lớn nhờ context switching.  
-- GPU và CPU đủ dùng cho các tác vụ nhẹ.
+### ➤ Đánh giá:
+- Không phù hợp xử lý song song mạnh.
+- Có thể dùng làm **worker node nhẹ** trong hệ phân tán.
+- Phù hợp chạy các service nhẹ, log, monitor hoặc client node.
 
 ---
+
+![Ảnh phân tán](/images/memory.png)
+
+## 🧠 2. RAM – 20.0 GB DDR4 (2400 MHz)
+
+- **Đang dùng**: ~11.8 GB (60%)
+- **RAM nén**: 770 MB  
+- **Cấu hình**: 2 thanh 4GB + 1 thanh 16GB (không đồng đều)
+
+### ➤ Đánh giá:
+- Dung lượng RAM **tốt** để mô phỏng hệ thống phân tán nhiều container.
+- Phù hợp chạy Docker, Kubernetes (minikube), hoặc thử nghiệm Redis, Kafka.
+- Có thể xử lý **đa nhiệm** tốt trong môi trường phát triển.
+
+---
+![Ảnh phân tán](/images/gpux.png)
+
+## 🎮 3. GPU – Intel HD Graphics 620 (iGPU)
+
+- **Shared memory**: 0.3 / 9.9 GB  
+- **Không hỗ trợ tính toán GPU (CUDA, OpenCL)**
+
+### ➤ Đánh giá:
+- Không phù hợp cho hệ thống phân tán cần **GPU compute** như AI/ML.
+- Chỉ hỗ trợ hiển thị cơ bản, phù hợp dashboard, UI nhẹ.
+
+---
+
+## 📊 Tổng kết
+
+| Thành phần | Đánh giá | Vai trò khuyên dùng |
+|------------|----------|----------------------|
+| **CPU** | ⭐⭐☆☆☆ | Node phụ, xử lý nhẹ |
+| **RAM** | ⭐⭐⭐⭐☆ | Tốt cho mô phỏng nhiều service |
+| **GPU** | ⭐☆☆☆☆ | Không phù hợp AI/ML |
+
+---
+
+##  Phù hợp với:
+- Học tập, mô phỏng hệ thống phân tán nhẹ.
+- Phát triển microservices, Docker, Kubernetes (minikube).
+
+##  Không phù hợp với:
+- Xử lý Big Data, AI, hệ thống GPU cluster.
+
 
 ## 2. 12 Bài toán phổ biến trong CNTT có sử dụng đa luồng/đa tiến trình
 
@@ -51,8 +93,9 @@ categories: ["công nghệ", "hệ thống phân tán"]
 
 ## 3. Khi nào dùng Thread, khi nào dùng Process?
 
-![Ảnh phân tán](/images/distribu-system.png)
-
+![Ảnh phân tán](/images/vdthread-process.jpg)
+![Ảnh phân tán](/images/vdthread-process2.jpg)
+![Ảnh phân tán](/images/vdthread-process3.jpg)
 
 
 | Trường hợp                 | Thread                        | Process                         | Cả hai                                      |
