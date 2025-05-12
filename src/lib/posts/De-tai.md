@@ -42,11 +42,13 @@ CockroachDB là hệ quản trị cơ sở dữ liệu phân tán mã nguồn m�
 - **Đảm bảo nhất quán dữ liệu mạnh** trong môi trường phân tán.
 
 ###  CockroachDB giải quyết được gì?
-
-- **Nhất quán mạnh**: Đồng bộ dữ liệu giữa các node một cách tự động.
-- **Khả năng phục hồi lỗi cao**: Hệ thống vẫn hoạt động khi một hoặc nhiều node mất kết nối.
-- **Không downtime khi mở rộng**: Có thể thêm node mới dễ dàng trong quá trình hoạt động.
-- **Thích hợp cho ứng dụng quy mô lớn**, phân tán: mạng xã hội, hệ thống tài chính, e-commerce đa vùng.
+| Vấn đề thường gặp trong ứng dụng phân tán      | Giải pháp từ CockroachDB                               |
+|------------------------------------------------|--------------------------------------------------------|
+| Dữ liệu không nhất quán giữa các node          |  Giao thức đồng thuận Raft giúp đảm bảo consistency |
+| Khó mở rộng quy mô hệ thống                    |  Hỗ trợ horizontal scaling không downtime            |
+| Khó quản lý lỗi phần cứng hoặc mất node         |  Tự động phục hồi và phân phối lại dữ liệu           |
+| Mất dữ liệu khi node gặp lỗi                   |  Replication tự động (3 bản sao mặc định)            |
+| Khó triển khai nhiều cụm DB cho vùng địa lý    |  Hỗ trợ multi-region database                        |
 
 ###  So sánh CockroachDB với các CSDL/Framework khác
 
@@ -59,11 +61,11 @@ CockroachDB là hệ quản trị cơ sở dữ liệu phân tán mã nguồn m�
 | Độ thân thiện         |  Vừa phải              | Dễ                 |  Dễ                |  Dễ              |
 
 ### ➕ Ưu điểm
-
-- Phân tán thực sự (true distributed system).
-- Hỗ trợ SQL, dễ tiếp cận với lập trình viên quen dùng RDBMS.
-- Tự động cân bằng tải, phục hồi lỗi.
-- Có dịch vụ Cloud và Docker dễ triển khai.
+- **Phân tán thực sự**: Không có "master" node – mọi node đều có thể xử lý request, giúp cân bằng tải tự nhiên.
+- **Khả năng tự phục hồi**: Khi một node chết, các node còn lại vẫn hoạt động và giữ nguyên dữ liệu.
+- **Tính nhất quán mạnh**: Nhờ giao thức Raft, tất cả các thao tác ghi đều được xác nhận qua majority quorum.
+- **Tích hợp dễ dàng**: Do tương thích PostgreSQL, các ORM như Prisma, Sequelize... có thể dùng trực tiếp.
+- **Triển khai linh hoạt**: Có thể dùng Docker, Kubernetes, hoặc dịch vụ CockroachDB Cloud.
 
 ### ➖ Nhược điểm
 
@@ -72,18 +74,33 @@ CockroachDB là hệ quản trị cơ sở dữ liệu phân tán mã nguồn m�
 - Không phù hợp cho bài toán nhỏ hoặc hệ thống ít người dùng.
 
 ###  Ứng dụng thực tế
-
-- Ngân hàng, tài chính, giao dịch thời gian thực.
-- Mạng xã hội, nền tảng blog đông người dùng.
-- Hệ thống e-commerce toàn cầu cần truy cập dữ liệu nhanh ở nhiều khu vực.
+- **Tài chính – ngân hàng**: Giao dịch phải được lưu đúng, đầy đủ, không mất dữ liệu ngay cả khi lỗi hệ thống.
+- **Mạng xã hội**: Cần xử lý hàng triệu người dùng, lượt like/bình luận theo thời gian thực trên toàn cầu.
+- **Thương mại điện tử**: Xử lý tồn kho, đơn hàng và giao dịch từ nhiều vùng địa lý khác nhau.
+- **Hệ thống nội dung đa người dùng (CMS/Blog)**: Cho phép đăng tải bài viết, phản hồi/bình luận ngay lập tức và tin cậy.
 
 ---
 
 ##  4. Ứng dụng CockroachDB trong đề tài blog
 
-- **Lưu trữ bài viết và bình luận phân tán** trên nhiều node → đảm bảo không mất dữ liệu nếu có node gặp sự cố.
-- **Tính năng bình luận thời gian thực** qua WebSocket sẽ tương tác với backend để cập nhật bình luận mới lên DB ngay khi người dùng gửi.
-- **Dễ dàng mở rộng** khi hệ thống có nhiều người dùng hoặc nhiều bài viết hơn.
+###  Vai trò của CockroachDB trong hệ thống
+
+- **Dữ liệu người dùng, bài viết và bình luận** sẽ được lưu dưới dạng các bảng quan hệ tiêu chuẩn.
+- CockroachDB **phân tán dữ liệu tự động** trên nhiều node, tránh quá tải tại một điểm.
+- Trong trường hợp một node gặp lỗi, dữ liệu vẫn còn ở các node khác (replication 3 bản sao).
+- Hỗ trợ tính năng **multi-region** → triển khai blog hoạt động tốt ở nhiều địa điểm (nếu cần).
+
+###  Tích hợp với hệ thống bình luận thời gian thực
+
+- Frontend (SvelteKit) sử dụng WebSocket để lắng nghe bình luận mới.
+- Backend nhận bình luận mới, ghi xuống CockroachDB.
+- Nhờ tính nhất quán mạnh, các client khác sẽ luôn nhận được dữ liệu cập nhật đúng.
+
+###  Lợi ích mang lại
+
+- Tăng tính **tin cậy và ổn định** của hệ thống blog.
+- Cấu trúc **dễ mở rộng** khi có nhiều người dùng hoặc nhu cầu xử lý nhiều bình luận cùng lúc.
+- **Hỗ trợ phát triển lâu dài**, vì CockroachDB đã sẵn sàng cho các hệ thống ở quy mô lớn hơn.
 
 ---
 
