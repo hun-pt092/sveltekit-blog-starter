@@ -6,7 +6,7 @@ excerpt: "Nói về hiệu năng máy tính của tôi, các bài toán sử d�
 coverImage: "/images/tien_trinh.png"
 coverWidth: 1200
 coverHeight: 1300
-categories: ["công nghệ", "hệ thống phân tán"]
+categories: ["công nghệ","hệ thống phân tán"]
 ---
 # Tiến Trình & Luồng
 
