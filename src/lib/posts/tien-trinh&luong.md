@@ -93,9 +93,9 @@ categories: ["công nghệ", "hệ thống phân tán"]
 
 ## 3. Khi nào dùng Thread, khi nào dùng Process?
 
-![Ảnh phân tán](/images/vdthread-process.jpg)
-![Ảnh phân tán](/images/vdthread-process2.jpg)
-![Ảnh phân tán](/images/vdthread-process3.jpg)
+![](/images/vdthread-process.jpg)
+![](/images/vdthread-process2.jpg)
+![](/images/vdthread-process3.jpg)
 
 
 | Trường hợp                 | Thread                        | Process                         | Cả hai                                      |
