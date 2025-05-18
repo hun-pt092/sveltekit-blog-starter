@@ -2,7 +2,7 @@
 title: "Tìm hiểu về Định danh"
 slug: "he-thong-phan-tan"
 date: "2025-05-15"
-coverImage: "/images/distribu-system.png"
+coverImage: "/images/dinhdanh.png"
 categories: ["công nghệ", "hệ thống phân tán"]
 ---
 **Tác giả:** Nguyễn Duy Hưng
