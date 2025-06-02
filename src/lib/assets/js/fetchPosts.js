@@ -11,9 +11,8 @@ const fetchPosts = async ({ offset = 0, limit = postsPerPage, category = '' } = 
 	)
 
 	let sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date))
-	
-	if (category) {
-    sortedPosts = sortedPosts.filter(post => post.categories.includes(category))
+		if (category) {
+    sortedPosts = sortedPosts.filter(post => post.categories && post.categories.includes(category))
 	}
   
 	if (offset) {
@@ -32,7 +31,7 @@ const fetchPosts = async ({ offset = 0, limit = postsPerPage, category = '' } = 
 		coverWidth: post.coverWidth, 
 		coverHeight: post.coverHeight,
 		date: post.date,
-		categories: post.categories,
+		categories: post.categories || [],
 	}))
 
 	return {

@@ -1,10 +1,10 @@
- ---
+---
 title: "Deliverable 3: Tiến độ dự án:"
-slug: "he-thong"
-date: "2025-05-27"
+slug: "tien-do"
+date: "2025-05-26"
 categories: ["web blog"]
 ---
- # Báo cáo tiến độ dự án: Hệ thống blog phân tán với CockroachDB và SvelteKit
+# Báo cáo tiến độ dự án: Hệ thống blog phân tán với CockroachDB và SvelteKit
 
 ## Tóm tắt tiến độ
 
