@@ -171,9 +171,9 @@ services:
 
 ### Một số hình ảnh về dự án
 
-![Ảnh phân tán](/images/cpux.png)
-![](/images/vdthread-process.jpg)
-
+![Ảnh docke1](/images/docke1.png)
+![anh docke2](/images/docke2.png)
+![anh comment](/images/comment_ngay.png)
 ## Tóm tắt tiến độ dự án
 
 Dự án đã hoàn thành tất cả 5 tiêu chí bắt buộc và 4/5 tiêu chí tùy chọn đã chọn (Load Balancing, System Recovery, Consistency Guarantees và Deployment Automation). Tiêu chí Security Features đã được triển khai một phần.
